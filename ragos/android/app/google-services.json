@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1018261381019",
+    "project_id": "ragos53",
+    "storage_bucket": "ragos53.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018261381019:android:ab489232948663c25f4b3e",
+        "android_client_info": {
+          "package_name": "com.example.ragos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANgXET9b1lg002ySKHziX7c82-JrFTP90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
