@@ -4,6 +4,20 @@
         android:label="ragos"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <!--  🔵  Bildirim kanalı / ikon / renk -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="care_alerts" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@android:color/white" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

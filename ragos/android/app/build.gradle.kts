@@ -14,12 +14,15 @@ android {
     ndkVersion = "27.0.12077973"
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+
+        // 🔵  EKLE — flutter_local_notifications 17.x için gerekli
+        isCoreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     defaultConfig {
@@ -44,4 +47,15 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Firebase Bill of Materials — sizde zaten varsa sürümünü koruyun
+    implementation(platform("com.google.firebase:firebase-bom:33.5.0"))
+
+    // Örnek: FCM
+    implementation("com.google.firebase:firebase-messaging")
+
+    // 🔵  DESUGARING – build hatasını çözer
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 }
