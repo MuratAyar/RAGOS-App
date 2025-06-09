@@ -8,9 +8,9 @@ class AppBottomNavigation extends StatelessWidget {
   final int? currentIndex;
 
   const AppBottomNavigation({
-    Key? key,
+    super.key,
     this.currentIndex,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class AppBottomNavigation extends StatelessWidget {
               Navigator.pushReplacementNamed(context, '/config');
               break;
             case 3:
-              Navigator.pushReplacementNamed(context, '/report');
+              Navigator.pushReplacementNamed(context, '/timeline');
               break;
           }
         },
@@ -63,8 +63,8 @@ class AppBottomNavigation extends StatelessWidget {
             label: 'Config',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.description),
-            label: 'Report',
+            icon: Icon(Icons.timeline),
+            label: 'Timeline',
           ),
         ],
       ),

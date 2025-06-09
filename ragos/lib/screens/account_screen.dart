@@ -3,14 +3,14 @@ import '../widgets/bottom_navigation.dart';
 import 'sign_up_screen.dart'; // Needed for logout redirection
 
 class AccountScreen extends StatefulWidget {
-  const AccountScreen({Key? key}) : super(key: key);
+  const AccountScreen({super.key});
 
   @override
   State<AccountScreen> createState() => _AccountScreenState();
 }
 
 class _AccountScreenState extends State<AccountScreen> {
-  int _selectedIndex = 0;
+  final int _selectedIndex = 0;
   final List<bool> _open = List<bool>.filled(4, false);
 
   @override

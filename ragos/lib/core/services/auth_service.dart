@@ -1,5 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:logger/logger.dart';
+
+final _logger = Logger();
+
 
 class AuthService {
   final _auth = FirebaseAuth.instance;
@@ -48,9 +52,21 @@ class AuthService {
     });
   }
 
-  Future<User?> login(String email, String pwd)
-      => _auth.signInWithEmailAndPassword(email: email, password: pwd)
-             .then((c) => c.user);
+    Future<User?> login(String email, String pwd) async {
+      try {
+        final credential = await _auth.signInWithEmailAndPassword(
+            email: email, password: pwd);
+        final user = credential.user;
+        _logger.i("✅ Login successful: uid=${user?.uid}, email=${user?.email}");
+        return user;
+      } catch (e, stackTrace) {
+        _logger.e("❌ Login failed for $email", error: e, stackTrace: stackTrace);
+        return null;
+      }
+    }
+
+
+
 
   Future<void> logout() => _auth.signOut();
 

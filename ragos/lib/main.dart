@@ -12,17 +12,22 @@ import 'screens/sign_in_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/account_screen.dart';
 import 'screens/account_verification_screen.dart'; // <-- ADD THIS IMPORT
+import 'screens/timeline_screen.dart';
+
+//import 'core/services/push_notification_service.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // await PushNotificationService.init();
   runApp(const RagosApp());
 }
 
 class RagosApp extends StatelessWidget {
-  const RagosApp({Key? key}) : super(key: key);
+  const RagosApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +54,7 @@ class RagosApp extends StatelessWidget {
             '/home' : (_) => const HomeScreen(),
             '/account' : (_) => const AccountScreen(),
             '/config' : (_) => const ConfigScreen(),
-            '/report' : (_) => const ReportScreen(),
+            '/timeline' : (_) => const TimelineScreen(),
           },
         );
       },
@@ -59,7 +64,7 @@ class RagosApp extends StatelessWidget {
 
 /// Placeholder for Config screen
 class ConfigScreen extends StatelessWidget {
-  const ConfigScreen({Key? key}) : super(key: key);
+  const ConfigScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -72,28 +77,6 @@ class ConfigScreen extends StatelessWidget {
       body: const Center(
         child: Text(
           'Config Screen',
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
-    );
-  }
-}
-
-/// Placeholder for Report screen
-class ReportScreen extends StatelessWidget {
-  const ReportScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: const Text('Report'),
-        backgroundColor: Colors.black,
-      ),
-      body: const Center(
-        child: Text(
-          'Report Screen',
           style: TextStyle(color: Colors.white),
         ),
       ),

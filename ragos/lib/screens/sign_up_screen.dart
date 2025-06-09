@@ -232,8 +232,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                                 setState(() => _loading = true);
 
-                                final _authSvc = AuthService();
-                                final user = await _authSvc.signUp(
+                                final authSvc = AuthService();
+                                final user = await authSvc.signUp(
                                   fullName: _name.text.trim(),
                                   phone: _phoneNumber.text.trim(),
                                   email: _email.text.trim(),

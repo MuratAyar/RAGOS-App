@@ -18,4 +18,7 @@ class AppColors {
   // convenience aliases
   static const Color white  = Colors.white;
   static const Color black  = Colors.black;
+
+  static const Color greyLine = Color(0xFFBDBDBD); // light grey for timeline lines
+
 }

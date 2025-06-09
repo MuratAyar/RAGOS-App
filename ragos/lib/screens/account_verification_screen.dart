@@ -6,7 +6,7 @@ import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 
 class AccountVerificationScreen extends StatefulWidget {
-  const AccountVerificationScreen({Key? key}) : super(key: key);
+  const AccountVerificationScreen({super.key});
 
   @override
   State<AccountVerificationScreen> createState() => _AccountVerificationScreenState();

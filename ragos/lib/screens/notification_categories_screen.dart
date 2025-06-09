@@ -9,9 +9,9 @@ class NotificationCategoriesScreen extends StatefulWidget {
   final Map<String, int> notificationCounts;
 
   const NotificationCategoriesScreen({
-    Key? key,
+    super.key,
     required this.notificationCounts,
-  }) : super(key: key);
+  });
 
   @override
   State<NotificationCategoriesScreen> createState() =>

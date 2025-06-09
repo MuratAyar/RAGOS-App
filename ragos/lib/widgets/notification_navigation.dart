@@ -5,10 +5,10 @@ class NotificationNavigation extends StatelessWidget {
   final int unreadCount;
 
   const NotificationNavigation({
-    Key? key,
+    super.key,
     required this.onTap,
     this.unreadCount = 8,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

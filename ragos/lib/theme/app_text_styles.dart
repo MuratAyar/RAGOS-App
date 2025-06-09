@@ -44,4 +44,16 @@ class AppTextStyles {
         decoration: TextDecoration.underline,
         color: AppColors.primary,
       );
+
+  static const TextStyle timelineTitle = TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        color: Colors.white,
+      );
+
+  static const TextStyle timelineTime = TextStyle(
+        fontSize: 13,
+        fontWeight: FontWeight.w400,
+        color: Colors.white70,
+      );
 }
